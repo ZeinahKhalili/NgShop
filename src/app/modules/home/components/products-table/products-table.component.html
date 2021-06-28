@@ -1,0 +1,26 @@
+<p-table
+  [value]="products"
+  [rowHover]="true"
+  paginator="true"
+  rows="{{ products?.length }}"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th translate *ngFor="let header of headers">{{ header }}</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+    <tr *ngIf="product[model] == compared">
+      <td>{{ product?.name }}</td>
+      <td>{{ product?.price }}$</td>
+      <td>{{ product?.category }}</td>
+      <td>
+        <img
+          width="50px"
+          src="{{ product?.imageURL }}"
+          alt="{{ product?.imageURL }}"
+        />
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

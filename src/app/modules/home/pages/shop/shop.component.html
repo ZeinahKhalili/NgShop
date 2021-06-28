@@ -1,0 +1,50 @@
+<div class="p-grid p-m-6">
+  <div><p-tieredMenu [model]="items"></p-tieredMenu></div>
+  <ng-container
+    *ngIf="productsFiltered?.length == 0; then empty; else notEmpty"
+  >
+  </ng-container>
+  <ng-template #empty>
+    <div class="paper">
+      <div class="details">
+        <p translate style="font-size: xx-large; opacity: 0.7">
+          No Products...
+        </p>
+        <fa-icon
+          [icon]="faSadTear"
+          style="font-size: xx-large; opacity: 0.7"
+        ></fa-icon>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #notEmpty>
+    <i
+      class="pi pi-spin pi-spinner"
+      *ngIf="!products"
+      style="font-size: 2rem"
+    ></i>
+    <div class="p-col p-d-flex">
+      <ul class="products">
+        <div
+          class="p-lg-4 p-md-6 p-sm-12"
+          *ngFor="let product of productsFiltered"
+        >
+          <app-product-card
+            [product]="product"
+            source="shop"
+            [icon]="faShippingFast"
+            [shipCost]="shipCost"
+            showDiscount="true"
+            showInStock="true"
+            showShippment="true"
+            showDescription="true"
+            showRating="true"
+            showAddToCart="true"
+            (showAddToCartDialog)="onShowAddToCartDialog($event)"
+            [rate]="rating"
+          ></app-product-card>
+        </div>
+      </ul>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,27 @@
+<div class="p-d-flex container" style="background: white">
+  <div class="paper brandsContainer p-col" style="height: max-content">
+    <div class="p-lg-4 p-md-4 p-sm-12" *ngFor="let brand of brands">
+      <button
+        class="p-button-text brandButton"
+        icon="pi pi-tag"
+        [label]="brand"
+        (click)="overlayProductPanel.toggle($event)"
+        pButton
+      ></button>
+
+      <p-overlayPanel
+        #overlayProductPanel
+        [showCloseIcon]="true"
+        [style]="{ width: '800px' }"
+      >
+        <ng-template pTemplate>
+          <app-products-table
+            [products]="products"
+            [brand]="brand"
+            model="brand"
+          ></app-products-table>
+        </ng-template>
+      </p-overlayPanel>
+    </div>
+  </div>
+</div>

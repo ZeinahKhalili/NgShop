@@ -1,0 +1,16 @@
+<div class="p-inputgroup p-mb-4">
+  <span class="p-inputgroup-addon">
+    <fa-icon [icon]="icon"></fa-icon>
+  </span>
+  <span class="p-float-label">
+    <input
+      type="text"
+      id="inputgroup"
+      [disabled]="disabled()"
+      [ngModel]="user.address[model]"
+      pInputText
+      (ngModelChange)="updateUser($event)"
+    />
+    <label translate for="inputgroup" style="margin: 0">{{ label }}</label>
+  </span>
+</div>

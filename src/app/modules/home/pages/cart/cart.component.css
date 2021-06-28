@@ -1,0 +1,64 @@
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+img {
+  width: 100px !important;
+}
+.p-card .p-card-title {
+  font-size: 12px !important;
+}
+p {
+  font-size: x-small;
+}
+.p-button {
+  font-size: 13px !important;
+  width: 130px !important;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box {
+  width: 100%;
+  margin-bottom: 10px;
+
+  padding: 7px;
+  border: 1px solid rgb(166, 180, 245);
+  border-radius: 10px;
+}
+.productsDetails {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.buttons {
+  float: right !important;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.header {
+  width: 100% !important;
+  height: 100%;
+}
+
+.paper {
+  width: 600px;
+  height: 300px;
+  background-color: #f8f7ff;
+}
+.customButton {
+  padding: 0;
+  border: 0;
+  width: 20px !important;
+  float: left;
+}

@@ -1,0 +1,25 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+}
+.paper {
+  width: 600px;
+  height: 500px;
+  margin: 0;
+  margin-top: 30px;
+}
+.container {
+  background-color: white;
+}
+
+@media (max-width: 640px) {
+  .paper {
+    width: max-content;
+    height: max-content;
+  }
+}

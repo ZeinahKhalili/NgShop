@@ -1,0 +1,154 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f7ff;
+}
+.left-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  background-color: #f8f7ff;
+}
+.right-section {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+}
+
+.google-btn {
+  width: 184px;
+  height: 42px;
+  background-color: #4183f1;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.microsoft-btn {
+  width: 184px;
+  height: 42px;
+  background-color: white;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.icon-wrapper {
+  position: absolute;
+  margin-top: 1px;
+  margin-left: 1px;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+.icon {
+  position: absolute;
+  margin-top: 11px;
+  margin-left: 11px;
+  width: 18px;
+  height: 18px;
+}
+
+.google-btn-text {
+  float: right;
+  margin: 15px;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+}
+.microsoft-btn-text {
+  float: right;
+  margin: 15px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+
+  letter-spacing: 0.2px;
+}
+.sign-title {
+  text-transform: uppercase;
+  font-size: x-large;
+}
+.paper {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 1000px;
+  height: 390px;
+  margin: 100px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px 6px #ccc;
+}
+.vr {
+  margin: 10px;
+}
+.signBtn {
+  border-color: #5b4dbe;
+  width: 300px;
+  border-radius: 10px;
+}
+.signBtn:hover {
+  background-color: #5b4dbe;
+}
+
+.or {
+  overflow: hidden;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.25);
+  font-size: xx-small;
+}
+.or:before,
+.or:after {
+  background-color: rgba(0, 0, 0, 0.25);
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+.or:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+.or:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+.logo {
+  border-radius: 15px;
+}
+.new {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 15px;
+  margin-left: 200px;
+}
+.new a {
+  text-decoration: none;
+  font-size: larger !important;
+}
+.textinput {
+  width: 300px;
+}
+
+.checkPT {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.form-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.p {
+  margin: 0 !important;
+  font-size: larger !important;
+}
+.outer {
+  display: none;
+}

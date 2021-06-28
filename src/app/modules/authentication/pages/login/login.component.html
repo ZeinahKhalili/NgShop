@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="paper">
+    <div class="left-section">
+      <img class="logo" [src]="logo" alt="" width="170px" />
+    </div>
+    <hr class="vr" />
+
+    <div class="right-section">
+      <div class="new p-d-inline-flex">
+        <p translate class="p">NEW</p>
+        <a
+          translate
+          routerLink="/authentication/signup"
+          routerLinkActive="active"
+          >SIGN_UP</a
+        >
+      </div>
+
+      <p translate class="sign-title p-mb-6">SIGN_IN_TO_NG_SHOP</p>
+      <div class="outer">
+        <div class="google-btn p-mb-3">
+          <div class="icon-wrapper">
+            <img class="icon" [src]="googleLogo" />
+          </div>
+          <p class="google-btn-text">
+            <b translate>SIGN_IN_WITH_GOOGLE</b>
+          </p>
+        </div>
+        <div class="microsoft-btn">
+          <div class="icon-wrapper">
+            <img class="icon" [src]="microsoftLogo" />
+          </div>
+          <p class="microsoft-btn-text">
+            <b translate>SIGN_IN_WITH_MICROSOFT</b>
+          </p>
+        </div>
+        <p translate class="p-mb-3">OR</p>
+      </div>
+      <form [formGroup]="userData" class="form-center p-mb-3">
+        <span class="p-field p-float-label">
+          <input
+            class="textinput p-m-1"
+            id="float-input"
+            [(ngModel)]="user.email"
+            type="text"
+            formControlName="email"
+            pInputText
+          />
+          <label translate for="float-input">EMAIL</label>
+        </span>
+        <span class="p-field p-float-label">
+          <input
+            class="textinput p-m-1"
+            id="float-input"
+            type="password"
+            [(ngModel)]="user.password"
+            formControlName="password"
+            pPassword
+          />
+          <label translate for="float-input">PASSWORD</label>
+        </span>
+        <button
+          class="signBtn"
+          [label]="'SIGN_IN' | translate"
+          (click)="login()"
+          [disabled]="userData.invalid"
+          pButton
+        ></button>
+      </form>
+    </div>
+  </div>
+</div>
+<p-toast position="top-right"></p-toast>

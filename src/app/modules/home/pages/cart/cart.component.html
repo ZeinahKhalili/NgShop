@@ -1,0 +1,149 @@
+<div class="cartContent">
+  <ng-container
+    *ngIf="products?.length == 0; then cartIsEmpty; else cartNotEmpty"
+  >
+  </ng-container>
+  <ng-template #cartIsEmpty>
+    <div class="container" style="background-color: white">
+      <div class="paper">
+        <div class="details">
+          <div class="p-d-inline-flex">
+            <p translate style="font-size: xx-large; opacity: 0.7">
+              CART_IS_EMPTY
+            </p>
+            <fa-icon
+              [icon]="faSadTear"
+              class="p-mt-5"
+              style="font-size: xx-large; opacity: 0.7"
+            ></fa-icon>
+          </div>
+          <p translate style="font-size: large; opacity: 0.7">
+            CART_IS_EMPTY_DETAIL_UPPER
+          </p>
+          <div class="p-d-inline-flex">
+            <a
+              translate
+              style="font-size: large; opacity: 0.7"
+              [routerLink]="['/home/shop']"
+            >
+              CART_IS_EMPTY_DETAIL_LOWER
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #cartNotEmpty>
+    <button
+      class="p-button-success p-m-2 checkout"
+      icon=" pi pi-check"
+      (click)="checkOut()"
+      [disabled]="productsForCheckOut.length == 0"
+      translate
+      pButton
+    >
+      CHECK_OUT &nbsp;
+    </button>
+    <h1 translate class="p-m-3">YOUR_CART</h1>
+    <div class="p-grid">
+      <div class="p-col p-d-flex">
+        <ul class="products" *ngFor="let product of products">
+          <app-product-card
+            [product]="product"
+            source="cart"
+            [selectProduct]="selectingProduct"
+            [removeProduct]="removingProduct"
+            showDiscount="true"
+            showInStock="true"
+            showShippmentCost="true"
+            showQuantity="true"
+            showTotalPrice="true"
+            [icon]="faShippingFast"
+            (totalChange)="changing($event, product)"
+          ></app-product-card>
+        </ul>
+      </div>
+    </div>
+  </ng-template>
+
+  <p-dialog
+    translate
+    [header]="'CONFIRM_YOUR_ORDER' | translate"
+    [(visible)]="orderConfirm"
+    [style]="{ width: '50vw' }"
+    [baseZIndex]="10000"
+  >
+    <div class="p-col-12" style="justify-content: space-around">
+      <div>
+        <div class="box">
+          <h6 translate style="margin: 0">ADDRESS</h6>
+          <ng-container
+            *ngIf="checkAddress(user); then noAddress; else Address"
+          >
+          </ng-container>
+          <ng-template #noAddress>
+            <div>
+              <p translate>
+                TO_PROFILE <a translate [routerLink]="['/profile']">profile</a>
+              </p>
+            </div>
+          </ng-template>
+          <ng-template #Address>
+            <p>{{ user?.address.city }}</p>
+            <p>{{ user?.address.street }}</p>
+            <p>{{ user?.address.zipcode }}</p>
+          </ng-template>
+        </div>
+
+        <div class="box">
+          <h6 translate style="margin: 0">PRODUCTS_DETAILS</h6>
+          <div
+            class="productsDetails"
+            *ngFor="let product of productsForCheckOut"
+            style="border-bottom: 1px solid rgba(0, 0, 0, 0.3)"
+          >
+            <img src="{{ product.imageURL }}" alt="{{ product.name }}" />
+            <app-products-details
+              *ngFor="let key of filteredKeys"
+              [title]="key"
+              [value]="product[key.toLowerCase()]"
+            ></app-products-details>
+
+            <div class="p-d-inline-flex">
+              <p class="p-m-1" translate>SHIPPING_TO</p>
+              <p class="p-m-1">
+                {{ product.country.name }}
+                <fa-icon
+                  [icon]="faShippingFast"
+                  style="color: #7145ec"
+                ></fa-icon>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <h6 translate style="margin: 0">PAYMENT_METHOD</h6>
+          <div style="margin-top: 10px">
+            <p-dropdown
+              (onChange)="handlePayment($event)"
+              [options]="payments"
+            ></p-dropdown>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template pTemplate="footer">
+      <button
+        class="p-button-raised p-button-success p-button-text"
+        icon="pi pi-check"
+        (click)="buy()"
+        style="font-size: large !important"
+        [disabled]="confirmCheck()"
+        pButton
+        translate
+      >
+        CONFIRM &nbsp;
+      </button>
+    </ng-template>
+  </p-dialog>
+</div>

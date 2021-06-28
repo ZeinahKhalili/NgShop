@@ -1,0 +1,318 @@
+<div class="container">
+  <div class="paper">
+    <div class="p-col-6 profile" *ngIf="activeTab === 'profile'">
+      <div class="p-d-inline-flex">
+        <img
+          [src]="userPhoto"
+          width="100px"
+          height="100px"
+          style="border-radius: 50%; cursor: pointer"
+          alt="profile picture"
+          class="p-mb-3 p-ml-5"
+        />
+        <p-button
+          class="p-mt-6"
+          icon="pi pi-pencil"
+          styleClass=" p-button-secondary p-d-md-inline-flex p-button-text"
+          *ngIf="!available"
+          title="Edit"
+          (click)="showDialog()"
+          pRipple
+        ></p-button>
+      </div>
+      <app-inputgroup
+        *ngFor="let item of inputgroupList"
+        [icon]="item.icon"
+        [type]="item.type"
+        [model]="item.model"
+        [disabled]="item.disabled"
+        [user]="user"
+        (updateUser)="updateUser($event)"
+      ></app-inputgroup>
+
+      <button
+        class="p-button-success p-ml-3 p-mb-2"
+        icon="pi pi-check"
+        (click)="editProfile()"
+        style="width: 120px"
+        [disabled]="checkValidUser()"
+        *ngIf="available"
+        pButton
+        translate
+      >
+        DONE_EDIT
+      </button>
+      <button
+        class="p-mb-2 p-ml-3"
+        icon="pi pi-file"
+        style="width: 200px"
+        (click)="orderPage()"
+        translate
+        pButton
+      >
+        ORDERS &nbsp;&nbsp;
+      </button>
+      <button
+        class="p-mb-2 p-ml-3"
+        icon="pi pi-wallet"
+        style="width: 200px"
+        (click)="paymentsPage()"
+        translate
+        pButton
+      >
+        PAYMENT &nbsp;&nbsp;</button
+      ><button
+        class="p-mb-2 p-ml-3"
+        icon="pi pi-map"
+        style="width: 200px"
+        (click)="addressPage()"
+        pButton
+        translate
+      >
+        ADDRESS &nbsp;&nbsp;
+      </button>
+    </div>
+    <div class="profile" *ngIf="activeTab === 'order'">
+      <div class="p-d-inline-flex">
+        <img
+          class="p-mb-4"
+          [src]="userPhoto"
+          width="100px"
+          height="100px"
+          style="border-radius: 50%; cursor: pointer"
+          alt="profile picture"
+          (click)="backToProfile()"
+        />
+      </div>
+      <div *ngIf="products?.length == 0">
+        <div class="details">
+          <p translate style="font-size: xx-large; opacity: 0.7">
+            NO_ORDERS_YET
+          </p>
+          <fa-icon
+            [icon]="faSadTear"
+            style="font-size: xx-large; opacity: 0.7"
+          ></fa-icon>
+        </div>
+      </div>
+      <p-table
+        *ngIf="products?.length != 0"
+        [value]="products"
+        [rowHover]="true"
+        paginator="true"
+        [rows]="1"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th translate>NAME</th>
+            <th translate>PRICE</th>
+            <th translate>STATUS</th>
+            <th translate>IMAGE</th>
+            <th translate>SHIP</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+          <tr>
+            <td>{{ product?.name }}</td>
+            <td>{{ product?.price }}$</td>
+            <td>{{ product?.status }}</td>
+            <td>
+              <img
+                [src]="product?.imageURL"
+                [alt]="product?.imageURL"
+                width="60px"
+              />
+            </td>
+            <td translate>
+              <p-button
+                styleClass="p-button-success p-button-rounded "
+                icon="pi pi-check"
+                *ngIf="product?.status == 'un Shipped'"
+                type="button"
+                (click)="addToShipped(product)"
+              ></p-button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+    <div class="profile" *ngIf="activeTab === 'payment'">
+      <div class="p-d-inline-flex">
+        <img
+          class="p-mb-4"
+          [src]="userPhoto"
+          width="100px"
+          height="100px"
+          style="border-radius: 50%; cursor: pointer"
+          alt="profile picture"
+          (click)="backToProfile()"
+        />
+      </div>
+
+      <button
+        class="p-mb-2 p-ml-3 p-button-secondary"
+        icon="pi pi-wallet"
+        style="width: 200px"
+        *ngFor="let card of user?.cards"
+        translate
+        pButton
+      >
+        {{ card.cardNumber }} &nbsp;&nbsp;
+      </button>
+      <button
+        class="p-mb-2 p-ml-3 p-button-success"
+        icon="pi pi-plus"
+        style="width: 200px"
+        (click)="showAddPaymentsDialog()"
+        pButton
+        translate
+      >
+        ADD_NEW_CARD &nbsp;&nbsp;
+      </button>
+    </div>
+    <div class="p-col-6 profile" *ngIf="activeTab === 'address'">
+      <div class="p-d-inline-flex">
+        <img
+          class="p-mb-1"
+          [src]="userPhoto"
+          width="100px"
+          height="100px"
+          style="border-radius: 50%; cursor: pointer"
+          alt="profile picture"
+          (click)="backToProfile()"
+        />
+        <p-button
+          class="p-mt-6"
+          styleClass=" p-button-secondary p-d-md-inline-flex p-button-text"
+          icon="pi pi-pencil"
+          title="Edit"
+          type="button"
+          *ngIf="!available"
+          (click)="showDialog()"
+          pRipple
+        ></p-button>
+      </div>
+      <h2 translate>ADDRESS</h2>
+
+      <app-address-inputgroup
+        *ngFor="let item of addressInput"
+        [icon]="item.icon"
+        [label]="item.label"
+        [model]="item.model"
+        [disabled]="item.disabled"
+        [user]="user"
+        (changeUserAddress)="updateUser($event)"
+      ></app-address-inputgroup>
+      <button
+        class="p-button-success p-ml-3"
+        icon="pi pi-check"
+        style="width: 120px"
+        (click)="editProfile()"
+        [disabled]="checkAddress()"
+        *ngIf="available"
+        translate
+        pButton
+      >
+        DONE_EDIT
+      </button>
+    </div>
+  </div>
+</div>
+<p-dialog
+  translate
+  [header]="'ENTER_YOUR_PASSWORD' | translate"
+  [(visible)]="passwordConfirm"
+  [style]="{ width: '50vw' }"
+  [baseZIndex]="10000"
+>
+  <input
+    type="password"
+    style="width: 100%"
+    [(ngModel)]="enteredPassword"
+    pInputText
+  />
+  <ng-template pTemplate="footer">
+    <button
+      class="p-button-success p-button-text"
+      icon="pi pi-check"
+      (click)="verifyPassword()"
+      pButton
+    ></button>
+  </ng-template>
+</p-dialog>
+<p-dialog
+  translate
+  [header]="'ADD_A_CREDIT_DEBIT_CARD' | translate"
+  [(visible)]="newCard"
+  [style]="{ width: '50vw' }"
+  [baseZIndex]="10000"
+>
+  <div class="card-container">
+    <form [formGroup]="cardData" class="form-center p-mb-3">
+      <input
+        class="p-m-1"
+        style="width: 100%"
+        type="number"
+        [(ngModel)]="cardNumber"
+        [placeholder]="'CARD_NUMBER' | translate"
+        formControlName="cardNumber"
+        pInputText
+        translate
+      />
+      <div class="p-d-inline-flex">
+        <input
+          class="p-m-1"
+          style="width: 50%"
+          type="number"
+          translate
+          [(ngModel)]="month"
+          [placeholder]="'MM' | translate"
+          formControlName="month"
+          pInputText
+        />
+        <p>/</p>
+        <input
+          class="p-m-1"
+          style="width: 50%"
+          type="number"
+          [(ngModel)]="year"
+          formControlName="year"
+          [placeholder]="'YY' | translate"
+          pInputText
+          translate
+        />
+      </div>
+      <input
+        class="p-m-1"
+        style="width: 100%"
+        type="password"
+        [(ngModel)]="securityCode"
+        formControlName="securityCode"
+        [placeholder]="'Security code (CCV)' | translate"
+        pInputText
+        translate
+      />
+      <input
+        class="p-m-1"
+        style="width: 100%"
+        [(ngModel)]="cardHolder"
+        [placeholder]="'Cardholder name' | translate"
+        formControlName="cardHolder"
+        pInputText
+        translate
+      />
+
+      <button
+        class="p-button-success"
+        icon="pi pi-check"
+        style="width: 200px"
+        [disabled]="cardData.invalid"
+        (click)="addCard()"
+        pButton
+        translate
+      >
+        DONE &nbsp;
+      </button>
+    </form>
+  </div>
+</p-dialog>

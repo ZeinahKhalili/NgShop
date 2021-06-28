@@ -1,0 +1,15 @@
+<div class="p-inputgroup p-mb-2">
+  <span class="p-inputgroup-addon">
+    <i class="pi pi-{{ icon }}"></i>
+  </span>
+  <span class="p-float-label">
+    <input
+      [type]="type"
+      id="inputgroup"
+      [disabled]="disabled()"
+      pInputText
+      [ngModel]="user[model]"
+      (ngModelChange)="updateUserDetails($event)"
+    />
+  </span>
+</div>

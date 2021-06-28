@@ -1,0 +1,21 @@
+<p-carousel
+  [value]="products"
+  [numVisible]="3"
+  [numScroll]="3"
+  [circular]="true"
+  [autoplayInterval]="3000"
+  class="p-lg-4 p-md-4 p-sm-12"
+  [responsiveOptions]="responsiveOptions"
+>
+  <ng-template let-product pTemplate="item">
+    <app-product-card
+      [product]="product"
+      source="latest"
+      (showAddToCartDialog)="onShowAddToCartDialog($event)"
+      showDiscount="true"
+      showInStock="true"
+      showAddToCart="true"
+      [rate]="rating"
+    ></app-product-card>
+  </ng-template>
+</p-carousel>

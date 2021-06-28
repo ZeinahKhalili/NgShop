@@ -1,0 +1,48 @@
+<div class="contain">
+  <img alt="Card" [src]="product.imageURL" width="90px" />
+  <h3 style="margin: 0">{{ product.name }}</h3>
+  <ng-container *ngIf="product.inStock; else outOfStock">
+    <p translate [ngStyle]="{ color: product.inStock ? 'green' : 'red' }">
+      IN_STOCK
+    </p>
+  </ng-container>
+
+  <ng-template #outOfStock>
+    <p translate [ngStyle]="{ color: product.inStock ? 'green' : 'red' }">
+      OUT_OF_STOCK
+    </p>
+  </ng-template>
+  <div class="p-field">
+    <label translate for="quantity" class="p-m-2">QUANTITY</label>
+    <p-inputNumber
+      [(ngModel)]="product.quantity"
+      [showButtons]="true"
+      inputId="quantity"
+      [min]="1"
+      [max]="product.stock"
+    >
+    </p-inputNumber>
+  </div>
+  <div class="p-field">
+    <label translate for="colors" class="p-m-2">COLOR</label>
+    <p-dropdown
+      [options]="product.colors"
+      (onChange)="handleColors($event)"
+    ></p-dropdown>
+  </div>
+  <div class="p-field">
+    <label translate for="shipping" class="p-m-2">SHIPPING_TO</label>
+    <p-dropdown
+      [options]="countryNames"
+      (onChange)="handleShippment($event)"
+    ></p-dropdown>
+  </div>
+</div>
+<button
+  class="p-button-success"
+  icon="pi pi-check"
+  pButton
+  style="float: right; height: 20px"
+  (click)="addToCart()"
+  [disabled]="doneCheck(product)"
+></button>

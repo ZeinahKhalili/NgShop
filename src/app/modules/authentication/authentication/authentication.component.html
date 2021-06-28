@@ -1,0 +1,10 @@
+<div style="background-color: #f8f7ff">
+  <p-dropdown
+    [options]="languages"
+    placeholder="{{ 'SELECT_A_LANGUAGE' | translate }}"
+    optionLabel="name"
+    (onChange)="handleChange($event)"
+  ></p-dropdown>
+</div>
+<router-outlet></router-outlet>
+<p-toast position="top-right"></p-toast>

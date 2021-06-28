@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="p-grid p-m-6">
+    <div class="p-col p-d-flex">
+      <ul class="designers">
+        <div class="p-lg-4 p-md-6 p-sm-12" *ngFor="let designer of designers">
+          <p-card
+            [header]="designer.name"
+            styleClass="p-card-shadow"
+            class="p-m-2 card"
+          >
+            <p-header>
+              <img
+                alt="Card"
+                [src]="designer.imageURL"
+                (click)="designerDetails.toggle($event)"
+              />
+            </p-header>
+            <ng-template pTemplate="footer"
+              ><button
+                class="p-button-secondary"
+                icon="pi pi-pencil"
+                (click)="overlayProductsPanel.toggle($event)"
+                translate
+                pButton
+              >
+                SHOW_DESIGNS &nbsp;
+              </button>
+            </ng-template>
+
+            <p-overlayPanel
+              #overlayProductsPanel
+              [showCloseIcon]="true"
+              [style]="{ width: '800px' }"
+            >
+              <ng-template pTemplate>
+                <app-products-table
+                  [products]="products"
+                  [designer]="designer"
+                  model="designerName"
+                ></app-products-table>
+              </ng-template>
+            </p-overlayPanel>
+            <p-overlayPanel
+              #designerDetails
+              [showCloseIcon]="true"
+              [style]="{ width: '800px' }"
+            >
+              <img alt="Card" src="{{ designer.imageURL }}" />
+
+              <h1>{{ designer.name }}</h1>
+              <h3 translate>YEARS_ACTIVE</h3>
+
+              <p>{{ designer.yearsActive }}</p>
+              <h3 translate>DESCRIPTION</h3>
+              <p>{{ designer.description }}</p>
+            </p-overlayPanel>
+          </p-card>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

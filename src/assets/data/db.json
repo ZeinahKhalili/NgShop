@@ -1,0 +1,366 @@
+{
+  "products": [
+    {
+      "id": 3,
+      "name": "Men's Casual Slim Fit",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "code": 1850,
+      "price": 12.95,
+      "imageURL": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+      "inStock": true,
+      "brand": "Lacoste",
+      "stock": 48,
+      "category": "Men Clothing",
+      "releaseDate": "12/10/2016",
+      "rating": 4,
+      "discount": "10",
+      "designerName": "Stella McCartney",
+      "colors": [
+        "white",
+        "black",
+        "red"
+      ],
+      "checked": false,
+      "quantity": 0,
+      "color": "black",
+      "status": "un Shipped",
+      "country": {
+        "name": "Egypt",
+        "cost": 3.5
+      }
+    },
+    {
+      "id": 4,
+      "name": "Men's Casual T-Shirt",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "price": 16.54,
+      "inStock": true,
+      "brand": "Calvin Klein",
+      "stock": 45,
+      "category": "Men Clothing",
+      "imageURL": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+      "releaseDate": "9/17/2020",
+      "rating": 1,
+      "discount": "15",
+      "designerName": "Nicolas Ghesquiere",
+      "colors": [
+        "white",
+        "black",
+        "red"
+      ],
+      "checked": false,
+      "quantity": 0,
+      "color": "black",
+      "status": "un Shipped",
+      "country": {
+        "name": "Egypt",
+        "cost": 3.5
+      }
+    },
+    {
+      "id": 5,
+      "name": "White Gold Plated Princess",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "price": 9.99,
+      "brand": "Cartier",
+      "stock": 20,
+      "inStock": true,
+      "category": "Jewelery",
+      "imageURL": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+      "releaseDate": "11/2/2019",
+      "rating": 4,
+      "discount": "5",
+      "designerName": "Miuccia Prada",
+      "colors": [
+        "silver",
+        "gold"
+      ],
+      "quantity": 0,
+      "color": "gold",
+      "status": "un Shipped",
+      "country": {
+        "name": "Egypt",
+        "cost": 3.5
+      },
+      "checked": false
+    },
+    {
+      "id": 0,
+      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "price": 109.65,
+      "inStock": false,
+      "stock": 0,
+      "category": "Women Clothing",
+      "imageURL": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+      "releaseDate": "01/03/2021",
+      "brand": "Calvin Klein",
+      "rating": 5,
+      "discount": "10",
+      "designerName": "Alber Elbaz",
+      "colors": [
+        "white",
+        "black",
+        "red"
+      ],
+      "checked": false
+    },
+    {
+      "id": 1,
+      "name": "Men's Cotton Jacket",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "price": 41.09,
+      "inStock": false,
+      "stock": 0,
+      "category": "Men Clothing",
+      "imageURL": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+      "releaseDate": "9/17/2018",
+      "brand": "Lacoste",
+      "discount": "5",
+      "designerName": "Jonathan Andersons",
+      "colors": [
+        "white",
+        "black",
+        "red"
+      ],
+      "quantity": 0,
+      "color": "black",
+      "status": "un Shipped",
+      "country": {
+        "name": "Jordan",
+        "cost": 2.5
+      },
+      "checked": false,
+      "rating": 4
+    },
+    {
+      "id": 2,
+      "name": "Women's Silver Dragon Bracelet",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "price": 356.25,
+      "stock": 2,
+      "inStock": true,
+      "category": "Jewelery",
+      "imageURL": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+      "releaseDate": "11/2/2019",
+      "discount": "20",
+      "brand": "Cartier",
+      "designerName": "Phoebe Philo",
+      "colors": [
+        "silver",
+        "gold"
+      ],
+      "checked": false,
+      "quantity": 0,
+      "color": "gold",
+      "status": "un Shipped",
+      "country": {
+        "name": "Egypt",
+        "cost": 3.5
+      },
+      "rating": 5
+    }
+  ],
+  "designers": [
+    {
+      "name": "Alber Elbaz",
+      "imageURL": "https://ca-times.brightspotcdn.com/dims4/default/3225a24/2147483647/strip/true/crop/1429x803+0+0/resize/840x472!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc3%2F4a%2F364e05e1645c56f3f604c6ae70ef%2Fla-1514926356-bzuvh2edui-snap-image",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "yearsActive": "1970 - present"
+    },
+    {
+      "name": "Jonathan Andersons",
+      "imageURL": "https://images.surfacemag.com/app/uploads/2017/08/JonathanAnderson_Loewe-nanigutierrez_surface.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "yearsActive": "1970 - present"
+    },
+    {
+      "name": "Phoebe Philo",
+      "imageURL": "https://www.varsity.co.uk/images/derived/article-objects/md5-b75e511d4c608e4567b4541d6dacb4b5/24536.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "yearsActive": "1970 - present"
+    },
+    {
+      "name": "Stella McCartney",
+      "imageURL": "https://vegnews.com/media/W1siZiIsIjEwMjUyL1ZlZ05ld3MuU3RlbGxhTWNDYXJ0bmV5LnBuZyJdLFsicCIsInRodW1iIiwiODAweDQ3MyMiLHsiZm9ybWF0IjoianBnIn1dLFsicCIsIm9wdGltaXplIl1d/VegNews.StellaMcCartney.png?sha=78b67bffdfa5971c",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "yearsActive": "1970 - present"
+    },
+    {
+      "name": "Nicolas Ghesquiere",
+      "imageURL": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-458478584nicolas-1571673660.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "yearsActive": "1970 - present"
+    },
+    {
+      "name": "Miuccia Prada",
+      "imageURL": "https://baron-magazine.com/wp-content/uploads/2018/09/Miuccia-Prada.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "yearsActive": "1970 - present"
+    }
+  ],
+  "users": [
+    {
+      "username": "ZeinahKh",
+      "email": "zeinah@gmail.com",
+      "password": "123",
+      "cards": [
+        {
+          "cardNumber": 123456789,
+          "month": 12,
+          "year": 2020,
+          "securityCode": "1234567899",
+          "cardHolder": "Zeinah"
+        },
+        {
+          "cardNumber": 12054210,
+          "month": 12,
+          "year": 2021,
+          "securityCode": "20202020",
+          "cardHolder": "Zeinah"
+        }
+      ],
+      "address": {
+        "city": "Nabluss",
+        "street": "Rafidia",
+        "zipcode": "96857"
+      },
+      "cart": [
+        {
+          "id": 5,
+          "name": "White Gold Plated Princess",
+          "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+          "price": 9.02,
+          "brand": "Cartier",
+          "stock": 20,
+          "inStock": true,
+          "category": "Jewelery",
+          "imageURL": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+          "releaseDate": "11/2/2019",
+          "rating": 2,
+          "discount": "5",
+          "designerName": "Miuccia Prada",
+          "colors": [
+            "silver",
+            "gold"
+          ],
+          "quantity": 2,
+          "color": "gold",
+          "status": "cart",
+          "country": {
+            "name": "Egypt",
+            "cost": 3.5
+          },
+          "checked": false,
+          "totalCost": 20.64
+        },
+        {
+          "id": 3,
+          "name": "Men's Casual Slim Fit",
+          "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+          "code": 1850,
+          "price": 10.48,
+          "imageURL": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+          "inStock": true,
+          "brand": "Lacoste",
+          "stock": 48,
+          "category": "Men Clothing",
+          "releaseDate": "12/10/2016",
+          "rating": 4,
+          "discount": "10",
+          "designerName": "Stella McCartney",
+          "colors": [
+            "white",
+            "black",
+            "red"
+          ],
+          "checked": false,
+          "quantity": 12,
+          "color": "black",
+          "status": "cart",
+          "country": {
+            "name": "Egypt",
+            "cost": 3.5
+          },
+          "totalCost": 116.66
+        }
+      ],
+      "id": 2
+    },
+    {
+      "email": "alex@gmail.com",
+      "username": "Alex",
+      "password": "alex",
+      "cart": [],
+      "id": 4,
+      "address": {
+        "city": "",
+        "street": "",
+        "zipcode": 0
+      }
+    },
+    {
+      "email": "hellooo@gmail.com",
+      "password": "hello",
+      "address": {
+        "city": " ",
+        "street": " ",
+        "zipcode": 0
+      },
+      "cards": [
+        {
+          "cardNumber": 123456789,
+          "month": 12,
+          "year": 2020,
+          "securityCode": "123456789",
+          "cardHolder": "Zeinah"
+        }
+      ],
+      "cart": [
+        {
+          "id": 2,
+          "name": "Women's Silver Dragon Bracelet",
+          "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+          "price": 695.8,
+          "stock": 4,
+          "inStock": true,
+          "category": "JEWELERY",
+          "imageURL": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+          "releaseDate": "11/2/2019",
+          "discount": "20",
+          "brand": "Cartier",
+          "rating": 3,
+          "designerName": "Phoebe Philo",
+          "colors": [
+            "silver",
+            "gold"
+          ],
+          "checked": false,
+          "quantity": 4,
+          "color": "gold",
+          "status": "cart",
+          "country": {
+            "name": "Egypt",
+            "cost": 3.5
+          }
+        }
+      ],
+      "id": 5,
+      "username": "Zeinah"
+    }
+  ],
+  "countries": [
+    {
+      "name": "Palestine",
+      "cost": 1.5
+    },
+    {
+      "name": "Jordan",
+      "cost": 2.5
+    },
+    {
+      "name": "Egypt",
+      "cost": 3.5
+    }
+  ]
+}

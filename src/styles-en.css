@@ -1,0 +1,19 @@
+.p-menubar .p-menubar-custom,
+.p-menubar .p-menubar-end {
+  -ms-grid-row-align: center;
+  align-self: center;
+  margin-right: 0;
+  margin-left: auto;
+}
+ul.p-submenu-list {
+  left: 200px !important;
+}
+span.p-submenu-icon.pi.pi-angle-right.ng-star-inserted {
+  transform: scaleX(1) !important;
+}
+.checkout {
+  float: right !important;
+}
+.imagePlace {
+  margin-left: 60px;
+}

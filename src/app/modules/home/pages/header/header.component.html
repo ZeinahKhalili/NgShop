@@ -1,0 +1,26 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <img [src]="logo" alt="Ng-Shop" height="70px" style="border-radius: 20px" />
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div class="p-d-inline-flex">
+      <img
+        [src]="userPhoto"
+        alt="Ng-Shop"
+        height="45px"
+        width="50px"
+        style="border-radius: 50%; cursor: pointer"
+        [routerLink]="['/profile']"
+      />
+
+      <h3 class="p-m-2">{{ user?.username }}</h3>
+      <p-button
+        styleClass="p-button-rounded p-button-outlined p-button-secondary p-d-none p-d-md-inline-flex"
+        icon="pi pi-shopping-cart"
+        title="Shopping cart"
+        pRipple
+        [routerLink]="['/home/cart']"
+      ></p-button>
+    </div>
+  </ng-template>
+</p-menubar>

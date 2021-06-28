@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="paper">
+    <div class="left-section">
+      <img class="logo" [src]="logo" alt="" width="170px" />
+    </div>
+    <hr class="vr" />
+
+    <div class="right-section">
+      <div class="new p-d-inline-flex">
+        <p translate class="p">ALREADY_MEMBER</p>
+        <a
+          translate
+          routerLink="/authentication/signin"
+          routerLinkActive="active"
+          >SIGN_IN</a
+        >
+      </div>
+
+      <p translate class="sign-title p-mb-6">SIGN_UP_TO_NG_SHOP</p>
+      <div class="outer">
+        <div class="google-btn p-mb-3">
+          <div class="icon-wrapper">
+            <img class="icon" src="googleLogo" />
+          </div>
+          <p class="google-btn-text">
+            <b translate>SIGN_UP_WITH_GOOGLE</b>
+          </p>
+        </div>
+        <div class="microsoft-btn">
+          <div class="icon-wrapper">
+            <img class="icon" src="microsoftLogo" />
+          </div>
+          <p class="microsoft-btn-text">
+            <b translate>SIGN_UP_WITH_MICROSOFT</b>
+          </p>
+        </div>
+        <p translate class="p-mb-3 p-mt-3">OR</p>
+      </div>
+      <form [formGroup]="userData" class="form-center p-mb-3">
+        <span class="p-float-label form-group p-mb-3">
+          <input
+            class="textinput form-control p-m-1"
+            [class.is-invalid]="
+              userData.get('email').invalid && userData.get('email').touched
+            "
+            id="float-input"
+            type="email"
+            formControlName="email"
+            pInputText
+            [(ngModel)]="user.email"
+            ngModel
+            email
+          />
+          <label translate for="float-input">EMAIL</label>
+        </span>
+
+        <span class="p-float-label form-group p-mb-3">
+          <input
+            class="textinput form-control p-m-1"
+            id="float-input"
+            formControlName="password"
+            type="password"
+            [(ngModel)]="user.password"
+            pPassword
+          />
+          <label translate for="float-input">PASSWORD</label>
+        </span>
+        <div class="p-field-checkbox checkPT p-mb-3">
+          <p-checkbox
+            class="form-control"
+            formControlName="agreement"
+            agreement="true"
+            inputId="agreement"
+          ></p-checkbox>
+          <label translate for="agreement"
+            >BY_SIGINING_UP_YOU_AGREE_TO_OUR_TERMS_AND_PRIVACY_POLICY</label
+          >
+        </div>
+        <button
+          class="signBtn"
+          type="submit"
+          [label]="'SIGN_UP' | translate"
+          (click)="signup()"
+          [disabled]="invalidSignUp()"
+          pButton
+        ></button>
+      </form>
+    </div>
+  </div>
+</div>
+<p-toast position="top-right"></p-toast>

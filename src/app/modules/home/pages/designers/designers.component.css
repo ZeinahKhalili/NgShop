@@ -1,0 +1,23 @@
+.designers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  margin: 0;
+}
+
+img {
+  height: 150px !important;
+  width: auto !important;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+td img {
+  width: 70px !important;
+}
+
+.p-button {
+  font-size: 15px !important;
+  width: 130px !important;
+}

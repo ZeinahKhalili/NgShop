@@ -1,0 +1,101 @@
+<p-card
+  [header]="product.name"
+  subheader="${{ priceAfterDiscount }} "
+  styleClass="p-card-shadow"
+  class="p-m-2"
+>
+  <p-header
+    [style.justify-content]="source == 'cart' ? 'space-around' : 'center'"
+  >
+    <button
+      *ngIf="showRemoveProduct"
+      class="p-button-danger p-button-text customButton"
+      icon=" pi pi-times"
+      (click)="removeProduct(product)"
+      translate
+      pButton
+    ></button>
+    <img *ngIf="showImage" alt="Card" [src]="product.imageURL" />
+
+    <div class="buttons">
+      <p-checkbox
+        *ngIf="showSelectProduct"
+        [(ngModel)]="product.checked"
+        (onChange)="selectProduct(product)"
+        binary="true"
+      ></p-checkbox>
+    </div>
+  </p-header>
+  <p *ngIf="showDiscount">
+    <del style="color: red">{{ product.price }}</del>
+    ({{ product.discount }}% off)
+  </p>
+  <div *ngIf="shipCost != 0 && showShippment">
+    <p style="color: #7145ec">
+      + {{ shipCost }}$
+      <fa-icon [icon]="icon"></fa-icon>
+    </p>
+  </div>
+  <div *ngIf="showShippmentCost">
+    <p style="color: #7145ec">
+      + {{ product.country.cost }}$
+      <fa-icon [icon]="icon"></fa-icon>
+    </p>
+  </div>
+  <div *ngIf="showInStock">
+    <p translate [ngStyle]="{ color: product.inStock ? 'green' : 'red' }">
+      {{ product.inStock ? "IN_STOCK" : "OUT_OF_STOCK" }}
+    </p>
+  </div>
+  <div *ngIf="showDescription">
+    <p [ngClass]="{ 'show-less': showShortDesciption }">
+      {{ product.description }}
+    </p>
+    <p (click)="alterDescriptionText()" style="color: tomato; cursor: pointer">
+      {{ showShortDesciption ? "Show All" : "Show Less" }}
+    </p>
+  </div>
+
+  <div *ngIf="showQuantity">
+    <label translate for="quantity" class="p-m-2">QUANTITY</label>
+    <p-inputNumber
+      [(ngModel)]="product.quantity"
+      [showButtons]="true"
+      incrementButtonClass="p-button-success"
+      decrementButtonClass="p-button-danger"
+      inputId="quantity"
+      [min]="1"
+      [max]="product.stock"
+      (onInput)="changing(product)"
+      (onBlur)="changing(product)"
+    >
+    </p-inputNumber>
+    <p style="color: red" translate *ngIf="product.stock == product.quantity">
+      LIMIT
+    </p>
+  </div>
+
+  <ng-template pTemplate="footer">
+    <p-rating
+      *ngIf="showRating"
+      [(ngModel)]="product.rating"
+      (onRate)="rate($event, product)"
+      (onCancel)="rate($event, product)"
+      [iconOnStyle]="{ color: '#FFB900' }"
+    ></p-rating>
+    <button
+      *ngIf="showAddToCart"
+      class="p-button-secondary"
+      icon="pi"
+      (click)="onShowAddToCartDialog()"
+      pButton
+      translate
+    >
+      ADD_TO_CART
+    </button>
+    <div style="margin: 0" class="p-d-inline-flex" *ngIf="showTotalPrice">
+      <h4 translate>TOTAL_PRICE</h4>
+      <h4>= {{ total }} $</h4>
+    </div>
+  </ng-template>
+</p-card>
